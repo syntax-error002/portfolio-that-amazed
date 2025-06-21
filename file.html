@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            background-image: radial-gradient(circle at 1px 1px, #374151 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .project-card {
+            background: #1f2937;
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+        }
+        .ghost-btn {
+            background-color: transparent;
+            border: 1px solid #4b5563;
+            color: #d1d5db;
+        }
+        .ghost-btn:hover {
+            background-color: #374151;
+            border-color: #6366f1;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-gray-300">
+    <div class="container mx-auto px-4 py-14">
+        <h1 class="text-4xl font-extrabold text-white text-center mb-2 tracking-tight">All Projects</h1>
+        <p class="text-center text-indigo-400 mb-12">A collection of my work and experiments.</p>
+        <div id="projects-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </div>
+    <script src="projectsData.js"></script>
+    <script>
+        // Render all project cards from projectsData
+        const projectsList = document.getElementById('projects-list');
+        if (window.projectsData && projectsList) {
+            projectsList.innerHTML = Object.entries(window.projectsData).map(([key, project]) => `
+                <div class="project-card rounded-2xl overflow-hidden flex flex-col p-6">
+                    <a href="projectGallery.html?project=${key}">
+                        <img src="${project.images[0]}" alt="${project.title}" class="w-full h-48 object-cover rounded-lg mb-4">
+                    </a>
+                    <div class="flex flex-col flex-1">
+                        <h3 class="text-xl font-semibold text-white mb-2">${project.title}</h3>
+                        <p class="text-gray-400 mb-5 flex-1 text-sm leading-relaxed">${project.description}</p>
+                        <div class="flex space-x-3 mt-auto">
+                            <a href="${project.live && project.live !== '#' ? project.live : 'javascript:void(0);'}" target="_blank" class="${project.live && project.live !== '#' ? 'bg-green-500 hover:bg-green-600' : 'bg-gray-700 cursor-not-allowed'} text-white px-3 py-2 rounded-lg font-medium text-xs flex items-center transition-all" ${project.live && project.live !== '#' ? '' : 'tabindex=\"-1\" aria-disabled=\"true\"'}><i class="fas fa-external-link-alt mr-2"></i>Live</a>
+                            <a href="${project.github && project.github !== '#' ? project.github : 'javascript:void(0);'}" target="_blank" class="ghost-btn px-3 py-2 rounded-lg font-medium text-xs flex items-center transition-all" ${project.github && project.github !== '#' ? '' : 'tabindex=\"-1\" aria-disabled=\"true\"'}><i class="fab fa-github mr-2"></i>GitHub</a>
+                            <a href="projectGallery.html?project=${key}" class="ml-auto bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-2 rounded-lg font-semibold text-xs flex items-center transition-all"><i class="fas fa-eye mr-2"></i>Details</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,115 @@
+{
+  "project_name": "FocusFlow - The Ultimate Pomodoro App",
+  "project_type": "Showcase Website",
+  "description": "FocusFlow is a beautifully crafted Pomodoro timer app designed to help users maximize their productivity by breaking work into focused intervals with short breaks. It's ideal for students, professionals, and anyone looking to beat procrastination.",
+  "goal": "To create a visually stunning, fast, and informative single-page or multi-page website that highlights the app's features, benefits, user interface, testimonials, and download options.",
+  "target_audience": [
+    "Students preparing for exams",
+    "Remote workers and freelancers",
+    "Developers and designers",
+    "Productivity-focused users"
+  ],
+  "core_features": [
+    "25/5 Pomodoro Timer with Custom Intervals",
+    "Task Management System",
+    "Daily and Weekly Productivity Stats",
+    "Light/Dark Themes",
+    "Background Sound Options (Rain, Café, Forest)",
+    "Cross-platform (Web + Mobile)",
+    "Progress Ring & Visual Timer",
+    "Gamified XP & Level System"
+  ],
+  "tech_stack": {
+    "frontend": "React (Next.js or Vite) or plain HTML/CSS/JS",
+    "styling": "Tailwind CSS",
+    "animations": "Framer Motion",
+    "icons": "Lucide or Heroicons",
+    "hosting": "Netlify or Vercel"
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "title": "Boost Your Focus with FocusFlow",
+      "subtitle": "A Pomodoro app that helps you stay sharp, productive, and on track.",
+      "cta": "Download Now",
+      "image": "App UI mockup or 3D phone showcase"
+    },
+    {
+      "id": "features",
+      "title": "What Makes FocusFlow Special?",
+      "points": [
+        "Minimalist yet powerful timer interface",
+        "Custom task creation and tracking",
+        "Real-time productivity analytics",
+        "Customizable sounds and themes",
+        "Leaderboard and XP gamification"
+      ]
+    },
+    {
+      "id": "how-it-works",
+      "title": "How the Pomodoro Technique Works",
+      "steps": [
+        "Work for 25 minutes",
+        "Take a 5-minute break",
+        "Repeat 4 times and take a longer break"
+      ],
+      "graphic": "Pomodoro cycle animation"
+    },
+    {
+      "id": "screenshots",
+      "title": "App Previews",
+      "description": "See how the app looks on different devices",
+      "images": ["dashboard.png", "timer.png", "stats.png"]
+    },
+    {
+      "id": "testimonials",
+      "title": "Loved by Learners and Workers",
+      "quotes": [
+        {
+          "name": "Aarav, Student",
+          "quote": "FocusFlow helped me prepare for JEE without burnout!"
+        },
+        {
+          "name": "Priya, Freelancer",
+          "quote": "Simple, elegant, and extremely helpful."
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "q": "Is the app free?",
+          "a": "Yes, FocusFlow is completely free to use."
+        },
+        {
+          "q": "Can I use it on both mobile and desktop?",
+          "a": "Absolutely, it's optimized for all devices."
+        }
+      ]
+    },
+    {
+      "id": "download",
+      "title": "Start Focusing Today",
+      "cta_buttons": ["Download APK", "Try on Web", "Join Telegram Group"],
+      "note": "Available for Android, iOS (coming soon), and Web"
+    },
+    {
+      "id": "footer",
+      "title": "Built with ❤️ by Shaswat",
+      "links": ["Privacy Policy", "GitHub", "Contact"]
+    }
+  ],
+  "branding": {
+    "primary_color": "#F97316",
+    "accent_color": "#0F172A",
+    "font_family": "Poppins or Inter",
+    "logo_style": "Simple clock + lightning bolt",
+    "tone": "Clean, youth-focused, productive, tech-savvy"
+  },
+  "seo": {
+    "keywords": ["pomodoro app", "focus timer", "productivity app", "task manager", "focusflow"],
+    "meta_description": "Boost your productivity with FocusFlow — a clean and powerful Pomodoro timer app built for deep work and smart breaks."
+  }
+}

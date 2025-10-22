@@ -291,6 +291,57 @@
             color: #6366f1 !important;
             text-shadow: none;
         }
+
+        /* Accomplishments Section Clean Styles */
+        .accomplishment-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease-out;
+        }
+        
+        .accomplishment-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-card {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.3s ease-out;
+        }
+        
+        .stat-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Simple staggered animation delays */
+        .accomplishment-card:nth-child(1) { transition-delay: 0.1s; }
+        .accomplishment-card:nth-child(2) { transition-delay: 0.2s; }
+        .accomplishment-card:nth-child(3) { transition-delay: 0.3s; }
+        .accomplishment-card:nth-child(4) { transition-delay: 0.4s; }
+        .accomplishment-card:nth-child(5) { transition-delay: 0.5s; }
+        .accomplishment-card:nth-child(6) { transition-delay: 0.6s; }
+        
+        .stat-card:nth-child(1) { transition-delay: 0.7s; }
+        .stat-card:nth-child(2) { transition-delay: 0.8s; }
+        .stat-card:nth-child(3) { transition-delay: 0.9s; }
+        .stat-card:nth-child(4) { transition-delay: 1.0s; }
+        
+        /* Counter animation */
+        .counter {
+            transition: all 0.2s ease;
+        }
+        
+        .counter.animate {
+            animation: pulse 0.3s ease-in-out;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -304,9 +355,9 @@
             <div class="hidden md:flex space-x-8">
                 <a href="#home" class="text-gray-300 hover:text-indigo-400 transition nav-link">Home</a>
                 <a href="#about" class="text-gray-300 hover:text-indigo-400 transition nav-link">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-indigo-400 transition nav-link">Experience</a>
                 <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition nav-link">Projects</a>
                 <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition nav-link">Skills</a>
+                <a href="#accomplishments" class="text-gray-300 hover:text-indigo-400 transition nav-link">Accomplishments</a>
                 <a href="#blog" class="text-gray-300 hover:text-indigo-400 transition nav-link">Blog</a>
                 <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition nav-link">Contact</a>
             </div>
@@ -318,9 +369,9 @@
         <div id="mobile-menu" class="hidden md:hidden pb-4">
             <a href="#home" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Home</a>
             <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">About</a>
-            <a href="#experience" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Experience</a>
             <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Projects</a>
             <a href="#skills" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Skills</a>
+            <a href="#accomplishments" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Accomplishments</a>
             <a href="#blog" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Blog</a>
             <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-800 transition">Contact</a>
         </div>
@@ -335,39 +386,47 @@
                     <!-- Profile Card -->
                     <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/60 backdrop-blur rounded-xl p-4 md:p-6 shadow-xl border-2 border-indigo-500/30 md:row-span-2 flex flex-col justify-between h-[260px] md:h-[380px] transition duration-200 hover:-translate-y-1 hover:shadow-2xl hover:border-indigo-400/60">
                         <div class="flex-1">
-                            <p class="text-xs md:text-sm text-gray-400 mb-2">A Web Developer</p>
+                            <p class="text-xs md:text-sm text-gray-400 mb-2">A passionate AI enthusiast</p>
                             <h1 class="text-3xl md:text-5xl leading-tight font-extrabold text-white bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Shaswat<br>Kureel</h1>
                             <p class="mt-3 md:mt-4 text-gray-300 text-xs md:text-sm leading-relaxed">
-                                A B.Tech CSE student passionate about full‑stack development, UI/UX, and AI.
-                                I enjoy creating interactive experiences and building useful web applications.
+                                A Computer Engineering student passionate about full‑stack development, UI/UX, and AI.
+                                I enjoy creating interactive experiences and building useful web applications and AI solutions.
                             </p>
                         </div>
                         <div class="mt-4 flex items-center justify-between">
                             <div class="flex -space-x-2">
                                 <img src="ChatGPT Image Jun 18, 2025, 07_35_09 PM.png" alt="avatar" class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-indigo-500/40">
-                                <img src="A.png" alt="avatar2" class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-indigo-500/40">
+                                <!-- <img src="A.png" alt="avatar2" class="w-8 h-8 md:w-9 md:h-9 rounded-full border-2 border-indigo-500/40"> -->
                             </div>
-                            <a href="#about" class="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:from-indigo-600 hover:to-purple-700 transition duration-300 shadow-lg hover:shadow-indigo-500/25">
-                                <i class="fa-solid fa-arrow-right text-sm md:text-base"></i>
-                            </a>
+                            <div class="flex space-x-2">
+                                <a href="shaswat-resume-SE.pdf" target="_blank" class="relative inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:from-green-600 hover:to-emerald-700 transition duration-300 shadow-lg hover:shadow-green-500/25 group" title="View Resume">
+                                    <i class="fa-solid fa-file-pdf text-sm md:text-base"></i>
+                                    <span class="absolute z-10 bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                                        See Resume
+                                    </span>
+                                </a>
+                                <a href="#about" class="inline-flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 text-white hover:from-indigo-600 hover:to-purple-700 transition duration-300 shadow-lg hover:shadow-indigo-500/25">
+                                    <i class="fa-solid fa-arrow-right text-sm md:text-base"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Social tiles 1x6 row -->
                     <div class="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-3 md:col-span-2">
-                        <a href="#" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="GitHub">
+                        <a href="https://github.com/syntax-error002" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="GitHub">
                             <i class="fa-brands fa-github text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">GitHub</span>
                         </a>
-                        <a href="#contact" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Email">
+                        <a href="mailto:shaswat.developer@gmail.com" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Email">
                             <i class="fa-solid fa-envelope text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">Email</span>
                         </a>
-                        <a href="#" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="LinkedIn">
+                        <a href="https://www.linkedin.com/in/shaswatdev" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="LinkedIn">
                             <i class="fa-brands fa-linkedin-in text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">LinkedIn</span>
                         </a>
-                        <a href="#contact" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Phone">
+                        <a href="tel:+917862008920" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Phone">
                             <i class="fa-solid fa-mobile-screen-button text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">Phone</span>
                         </a>
@@ -375,20 +434,24 @@
                             <i class="fa-brands fa-twitter text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">Twitter</span>
                         </a>
-                        <a href="#" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Instagram">
+                        <a href="https://www.instagram.com/shaswat_kureel/" class="group bg-gradient-to-br from-gray-900/70 to-gray-800/50 border-2 border-gray-600/40 rounded-xl h-20 md:h-28 flex flex-col items-center justify-center shadow-lg transition duration-200 hover:shadow-xl hover:-translate-y-1 hover:border-indigo-500/60 hover:from-indigo-900/20 hover:to-purple-900/20" title="Instagram">
                             <i class="fa-brands fa-instagram text-2xl md:text-3xl text-gray-300 group-hover:text-white mb-1"></i>
                             <span class="text-xs text-gray-400 group-hover:text-gray-200">Instagram</span>
                         </a>
                     </div>
 
                     <!-- Right big headline card -->
-                    <div class="bg-gradient-to-br from-gray-900/80 to-gray-800/60 md:col-span-2 rounded-xl p-6 md:p-10 border-2 border-amber-400/40 shadow-xl flex items-center h-36 md:h-56 transition duration-200 hover:-translate-y-1 hover:shadow-2xl hover:border-amber-300/60">
+                    <a href="experience.html" class="relative group bg-gradient-to-br from-gray-900/80 to-gray-800/60 md:col-span-2 rounded-xl p-6 md:p-10 border-2 border-amber-400/40 shadow-xl flex items-center h-36 md:h-56 transition duration-200 hover:-translate-y-1 hover:shadow-2xl hover:border-amber-300/60">
                         <h2 class="text-3xl md:text-6xl font-extrabold leading-tight text-transparent bg-clip-text bg-gradient-to-br from-orange-300 via-orange-400 to-amber-300">
-                            Building Skills
+                            Deep Dive into
                             <br class="hidden md:block"/>
-                            For Future
+                            My Journey
                         </h2>
-                    </div>
+                        <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-3 w-max bg-black text-white text-sm rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                            Click to see my professional journey
+                        </div>
+                    </a>
+                    
 
                     <!-- Skills card (bottom left) -->
                     <div class="bg-gradient-to-br from-gray-900/70 to-gray-800/50 rounded-xl p-3 md:p-4 border-2 border-cyan-400/40 shadow-lg md:col-span-1 h-28 md:h-48 flex flex-col transition duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-300/60">
@@ -503,135 +566,170 @@
             </div>
         </section>
 
-     <!-- Tools I Use Section -->
-        <section id="tools" class="py-20 bg-gray-900 section-hidden">
-            <div class="container mx-auto px-6">
-                <h2 class="text-center text-white section-heading">Tech Stack & Workflow</h2>
-                <div class="skills-fade-container grid grid-cols-2 md:grid-cols-4 gap-8 mt-12">
-                    <!-- Design Tools -->
-                    <div class="skill-item text-center group" title="Figma">
-                        <i class="fab fa-figma text-6xl text-purple-400 mb-2" aria-label="Figma"></i>
-                        <p class="text-white mt-2">Figma</p>
-                    </div>
-                    <div class="skill-item text-center group" title="Adobe XD">
-                        <i class="fas fa-paint-brush text-6xl text-red-500 mb-2" aria-label="Adobe XD"></i>
-                        <p class="text-white mt-2">Adobe XD</p>
-                    </div>
-                    <!-- Code Editors & Platforms -->
-                    <div class="skill-item text-center group" title="VS Code">
-                        <i class="fas fa-code text-6xl text-blue-400 mb-2" aria-label="VS Code"></i>
-                        <p class="text-white mt-2">VS Code</p>
-                    </div>
-                    <div class="skill-item text-center group" title="GitHub">
-                        <i class="fab fa-github text-6xl text-gray-300 mb-2" aria-label="GitHub"></i>
-                        <p class="text-white mt-2">GitHub</p>
-                    </div>
-                    <div class="skill-item text-center group" title="GitLab">
-                        <i class="fab fa-gitlab text-6xl text-orange-500 mb-2" aria-label="GitLab"></i>
-                        <p class="text-white mt-2">GitLab</p>
-                    </div>
-                    <!-- Collaboration & Communication -->
-                    <div class="skill-item text-center group" title="Slack">
-                        <i class="fab fa-slack text-6xl text-green-400 mb-2" aria-label="Slack"></i>
-                        <p class="text-white mt-2">Slack</p>
-                    </div>
-                    <div class="skill-item text-center group" title="Discord">
-                        <i class="fab fa-discord text-6xl text-indigo-400 mb-2" aria-label="Discord"></i>
-                        <p class="text-white mt-2">Discord</p>
-                    </div>
-                    <!-- Project Management -->
-                    <div class="skill-item text-center group" title="Jira">
-                        <i class="fab fa-jira text-6xl text-blue-600 mb-2" aria-label="Jira"></i>
-                        <p class="text-white mt-2">Jira</p>
-                    </div>
-                    <div class="skill-item text-center group" title="Trello">
-                        <i class="fab fa-trello text-6xl text-blue-500 mb-2" aria-label="Trello"></i>
-                        <p class="text-white mt-2">Trello</p>
-                    </div>
-                    <!-- DevOps & API -->
-                    <div class="skill-item text-center group" title="Docker">
-                        <i class="fab fa-docker text-6xl text-blue-500 mb-2" aria-label="Docker"></i>
-                        <p class="text-white mt-2">Docker</p>
-                    </div>
-                    <div class="skill-item text-center group" title="AWS">
-                        <i class="fab fa-aws text-6xl text-orange-400 mb-2" aria-label="AWS"></i>
-                        <p class="text-white mt-2">AWS</p>
-                    </div>
-                    <div class="skill-item text-center group" title="Postman">
-                        <i class="fas fa-flask text-6xl text-orange-400 mb-2" aria-label="Postman"></i>
-                        <p class="text-white mt-2">Postman</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="py-20 bg-gray-900 section-hidden">
+        <!-- Accomplishments Section -->
+        <section id="accomplishments" class="py-20 bg-gray-900 section-hidden">
             <div class="container mx-auto px-6">
                 <!-- Use section-heading for larger, styled headings -->
-                <h3 class="text-center text-white section-heading">Professional Footprints</h3>
-                <div class="relative max-w-4xl mx-auto fade-container-no-scroll">
-                    <!-- Vertical Line for Experience Timeline -->
-                    <div class="absolute left-6 md:left-1/2 w-1 bg-gray-700 h-full transform md:-translate-x-1/2"></div>
+                <h2 class="text-center text-white section-heading">Accomplishments</h2>
+                <p class="text-center text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+                    Key milestones and achievements that define my journey
+                </p>
 
-                    <!-- Experience Item 1 -->
-                    <div class="relative mb-12 timeline-item-hidden">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full experience-item-icon shadow-xl flex items-center justify-center absolute left-6 md:left-1/2 transform -translate-x-1/2 z-10">
-                                <i class="fas fa-building text-2xl text-white"></i>
+                <!-- Accomplishments Grid -->
+                <div class="max-w-5xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Hackathon Win 1 -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fas fa-trophy text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">SIH 2025 Internal Hackathon</h3>
+                                    <p class="text-gray-400 text-sm">Finalist in Computer branch</p>
+                                </div>
                             </div>
-                            <div class="rounded-lg shadow-xl p-6 w-11/12 md:w-5/12 ml-20 md:ml-0 md:mr-auto experience-item">
-                                <h3 class="font-bold text-white text-xl mb-1">Frontend Developer Intern</h3>
-                                <p class="text-indigo-400 mb-2">CodeAlpha</p>
-                                <p class="text-gray-400 text-sm mb-4">Nov 2024 - Dec 2024</p>
-                                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                                    <li>Developed responsive and accessible UI components using HTML, CSS, and JavaScript.</li>
-                                    <li>Worked on modern frontend workflows and implemented reusable components.</li>
-                                    <li>Collaborated with mentors and peers in an agile environment to deliver weekly milestones.</li>
-                                    <li>Improved page performance and UI consistency across devices and browsers.</li>
-                                </ul>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                               Qualified for the final round of the SIH 2025 Internal Hackathon by building a full stack application for the problem statement "Kerala farmer assistant and well wiser" 
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">React</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Node.js</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">AI/ML</span>
                             </div>
-                            
                         </div>
-                    </div>
 
-                    <!-- Experience Item 2 -->
-                    <div class="relative mb-12 timeline-item-hidden">
-                        <div class="flex items-center md:flex-row-reverse">
-                            <div class="w-12 h-12 rounded-full experience-item-icon shadow-xl flex items-center justify-center absolute left-6 md:left-1/2 transform -translate-x-1/2 z-10">
-                                <i class="fas fa-laptop-code text-2xl text-white"></i>
+                        <!-- Coding Competition -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fas fa-medal text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Top 10 Finalist</h3>
+                                    <p class="text-gray-400 text-sm">Indux5.0 Industrial Hackathon</p>
+                                </div>
                             </div>
-                            <div class="rounded-lg shadow-xl p-6 w-11/12 md:w-5/12 ml-20 md:ml-0 md:ml-auto experience-item">
-                                <h3 class="font-bold text-white text-xl mb-1">HR Intern</h3>
-                                <p class="text-indigo-400 mb-2">Imingo</p>
-                                <p class="text-gray-400 text-sm mb-4">jan 2025 - march 2025/p>
-                                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                                    <li>Assisted in screening candidates, scheduling interviews, and maintaining applicant tracking systems.</li>
-                                    <li>Coordinated internal communications and supported onboarding processes for new hires.</li>
-                                    <li>Contributed to building efficient hiring workflows and enhancing candidate engagement strategies.</li>
-                                    <li>Collaborated with HR leads to ensure smooth execution of recruitment and documentation tasks.</li>
-                                </ul>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Competed against 500+ developers in the industrial hackathon by building on PS "Lack of
+                                Standardization and Digital Infrastructure in
+                                School Education". Achieved top 10 ranking through optimized solutions and creative problem-solving approaches.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Full Stack</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Flutter</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Dart</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Python</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">AI/ML</span>
                             </div>
-                            
                         </div>
-                    </div>
 
-                    <!-- Experience Item 3 -->
-                    <div class="relative mb-12 timeline-item-hidden">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 rounded-full experience-item-icon shadow-xl flex items-center justify-center absolute left-6 md:left-1/2 transform -translate-x-1/2 z-10">
-                                <i class="fas fa-code text-2xl text-white"></i>
+                        <!-- Startup Achievement -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fas fa-rocket text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Startup Founder</h3>
+                                    <p class="text-gray-400 text-sm">Studify Platform</p>
+                                </div>
                             </div>
-                            <div class="rounded-lg shadow-xl p-6 w-11/12 md:w-5/12 ml-20 md:ml-0 md:mr-auto experience-item">
-                                <h3 class="font-bold text-white text-xl mb-1">Junior Software Developer</h3>
-                                <p class="text-indigo-400 mb-2">TechCorp</p>
-                                <p class="text-gray-400 text-sm mb-4">June 2018 - December 2019</p>
-                                <ul class="list-disc list-inside text-gray-300 text-sm space-y-1">
-                                    <li>Assisted in the development of front-end components using HTML, CSS, and JavaScript.</li>
-                                    <li>Contributed to code reviews and participated in daily stand-up meetings.</li>
-                                    <li>Learned and applied version control best practices using Git.</li>
-                                </ul>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Founded and scaled Studify to 100+ active users with zero funding. Built complete tech stack including AI integration, payment systems, and gamification features.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Entrepreneurship</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Full-Stack</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">AI Integration</span>
                             </div>
+                        </div>
+
+                        <!-- Academic Excellence -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fas fa-graduation-cap text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Academic Excellence</h3>
+                                    <p class="text-gray-400 text-sm">JEE | IISER | CGPA</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                            Achieved perfect 9.8 CGPA in the first year of my engineering journey. Secured AIR 3000 in IISER.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Engineering</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Problem Solving</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Analytical Skills</span>
+                            </div>
+                        </div>
+
+                        <!-- Open Source Contribution -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fab fa-github text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Open Source</h3>
+                                    <p class="text-gray-400 text-sm">Active Contributor</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Contributed to multiple open-source projects with 100+ commits. Maintained popular repositories and helped developers worldwide through code contributions and documentation.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">GitHub</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Community</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Documentation</span>
+                            </div>
+                        </div>
+
+                        <!-- Freelance Success -->
+                        <div class="accomplishment-card bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg relative group">
+                            <div class="flex items-start mb-4">
+                                <div class="w-12 h-12 bg-gray-700 rounded-lg flex items-center justify-center mr-4 group-hover:bg-gray-600 transition-colors duration-300">
+                                    <i class="fas fa-star text-gray-300 text-lg"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-white font-semibold text-lg mb-1">Freelance Success</h3>
+                                    <p class="text-gray-400 text-sm">20+ Projects Delivered</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+                                Successfully completed 20+ freelance projects with 4.5+ average rating. Delivered custom web applications, UI/UX designs, and technical solutions for diverse clients.
+                            </p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Client Work</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">UI/UX</span>
+                                <span class="bg-gray-700 text-gray-300 px-3 py-1 rounded text-xs">Web Development</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Clean Stats Section -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <div class="stat-card text-center bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter" data-target="3">0</div>
+                            <div class="text-gray-400 text-sm font-medium">Hackathon Finalists</div>
+                        </div>
+                        <div class="stat-card text-center bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter" data-target="20">0</div>
+                            <div class="text-gray-400 text-sm font-medium">Projects Delivered</div>
+                        </div>
+                        <div class="stat-card text-center bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter" data-target="200">0</div>
+                            <div class="text-gray-400 text-sm font-medium">Users Impacted</div>
+                        </div>
+                        <div class="stat-card text-center bg-gray-800 rounded-lg p-6 border border-gray-700 hover:border-gray-600 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter" data-target="100">0</div>
+                            <div class="text-gray-400 text-sm font-medium">GitHub Commits</div>
                         </div>
                     </div>
                 </div>
@@ -1006,6 +1104,28 @@
                                 bar.style.transform = 'translateX(0)';
                             });
                         }
+
+                        // Accomplishments section animations
+                        if (entry.target.id === 'accomplishments') {
+                            const accomplishmentCards = entry.target.querySelectorAll('.accomplishment-card');
+                            accomplishmentCards.forEach(card => {
+                                card.classList.add('animate-in');
+                            });
+
+                            // Animate stats counters
+                            setTimeout(() => {
+                                const statCards = entry.target.querySelectorAll('.stat-card');
+                                statCards.forEach(card => {
+                                    card.classList.add('animate-in');
+                                });
+
+                                // Start counter animations
+                                const counters = entry.target.querySelectorAll('.counter');
+                                counters.forEach(counter => {
+                                    animateCounter(counter);
+                                });
+                            }, 500);
+                        }
                     }
                 });
             }, { threshold: 0.1 });
@@ -1090,6 +1210,29 @@
                 });
                 input.addEventListener('input', updateLabelClass);
             });
+
+            // Counter animation function
+            function animateCounter(counter) {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = Math.floor(current);
+                    
+                    // Add pulse animation when counter reaches target
+                    if (current === target) {
+                        counter.classList.add('animate');
+                        setTimeout(() => counter.classList.remove('animate'), 500);
+                    }
+                }, 16);
+            }
         });
     </script>
    <!-- <script type='text/javascript' src='//pl27039296.profitableratecpm.com/d5/50/09/d55009a3e97e20d6ecaabd120e06c647.js'></script> -->

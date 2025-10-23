@@ -53,23 +53,27 @@ window.projectsData = {
     },
     
     project3: {
-        title: "Social Media Dashboard",
-        subtitle: "Analytics & Content Management",
+        title: "Krishi Sakhi : AI-Powered Farmer Assistant",
+        subtitle: "Smart India Hackathon Prototype | Fullstack AI + Gov Integration",
         images: [
-            "https://placehold.co/900x450/f59e0b/ffffff?text=Social+Dashboard",
-            "https://placehold.co/900x450/f59e0b/ffffff?text=Analytics+View"
+            "Untitled design (2).png",
+            "krishi2.png"
         ],
-        description: `A comprehensive dashboard for managing multiple social media accounts with analytics, scheduling, and engagement tracking.`,
+        description: `An intelligent agri-companion built with FlutterFlow, React, Supabase & Gemini AI empowering farmers with live weather, soil health, crop disease detection, stage advisor, smart equipment guidance & government scheme insights.`,
         technologies: [
-            { name: "Angular", icon: "fab fa-angular text-red-300" },
-            { name: "Python", icon: "fab fa-python text-yellow-400" },
-            { name: "Django", icon: "fas fa-server text-green-400" },
-            { name: "Chart.js", icon: "fas fa-chart-bar text-blue-300" }
+            { name: "FlutterFlow", icon: "fas fa-mobile-alt text-blue-400" },
+            { name: "React", icon: "fab fa-react text-cyan-400" },
+            { name: "Supabase", icon: "fas fa-database text-green-400" },
+            { name: "Gemini AI", icon: "fas fa-robot text-yellow-400" },
+            { name: "Gov APIs", icon: "fas fa-landmark text-indigo-400" },
+            { name: "Weather API", icon: "fas fa-cloud-sun text-blue-300" },
+            { name: "OneSignal", icon: "fas fa-bell text-red-400" }
         ],
-        challenges: `Integrated multiple social media APIs and created real-time analytics visualization.`,
+        challenges: `Fused AI + real-time APIs into one seamless ecosystem — from smart crop insights & disease detection to instant push alerts. Built scalable architecture connecting farmers to data-driven decisions.`,
         github: "#",
         live: "#"
-    },
+    },    
+    
     project4: {
         title: "Weather App",
         subtitle: "Real-time Weather Information",
